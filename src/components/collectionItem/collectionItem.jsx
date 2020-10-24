@@ -3,24 +3,30 @@ import { Grid, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
     img: {
-        margin: 'auto',
-        width: 300,
-        height: 300
+        width: 180,
+        height: 'auto'
+    },
+    collectionItem: {
+        border: '1px solid rgba(0,0,0,0.125)',
+        borderRadius: '2px',
+        padding: 16
     }
 }))
 
-export default function CollectionItem() {
+export default function CollectionItem({phone}) {
     const classes = useStyles();
     return (
-        < Grid item xs container direction='column' spacing={2} >
-            <Grid item>
-                <img className={classes.img} src='https://productimages.hepsiburada.net/s/18/280-413/9801258663986.jpg?v1' />
-            </Grid>
-            <Grid item>
-                <Typography variant='body1'>
-                    Apple iPhone 7 Plus 32 GB (Apple Türkiye Garantili)
+        <Grid key={phone.id} item xs={12} md={6} lg={4}>
+            <div className={classes.collectionItem}>
+                <Grid item style={{ textAlign: 'center' }}>
+                    <img className={classes.img} src={phone.images[0]} />
+                </Grid>
+                <Grid item style={{ textAlign: 'center' }}>
+                    <Typography variant='body1'>
+                        {phone.title}
                 </Typography>
-            </Grid>
+                </Grid>
+            </div>
         </Grid>
     )
 }

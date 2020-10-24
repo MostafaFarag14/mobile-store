@@ -1,3 +1,5 @@
+export const brands = ["apple","huawei","meizu","samsung","vestel","xiaomi","asus"];
+
 export const phones = [{
     "title": "Apple iPhone 7 Plus 32 GB (Apple Türkiye Garantili)",
     "category": "phone",
@@ -359,3 +361,4 @@ export const phones = [{
     "id": 23,
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!"
 }]
+
